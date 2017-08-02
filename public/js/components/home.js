@@ -14,6 +14,14 @@ class Home extends Component{
             this.props.deleteUser(id);
         }
     }
+    componentDidUpdate(){
+        console.log('delete',this.props.delStatus)
+        if(this.props.delStatus === true){
+            this.props.getAllUsers();
+        }else if(this.props.delStatus === false){
+            alert('删除失败！');
+        }
+    }
     render(){
         return <div >
             <button type="button" className="btn btn-info position" onClick={this.addUser.bind(this)}>添加用户</button>
