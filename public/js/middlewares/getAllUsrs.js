@@ -5,8 +5,8 @@ export default store => next => action =>{
         console.log(action.type)
         request.post("/getAllUsers")
             .end((err,res)=>{
-                console.log('allUsers middleware',res.body.user);
-                next({type:"GETALLUSERS",user:res.body.user});
+                console.log('allUsers middleware',res.body.users);
+                next({type:"GETALLUSERS",users:res.body.users});
             })
     }
     else{
