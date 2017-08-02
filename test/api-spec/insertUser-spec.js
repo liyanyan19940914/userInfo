@@ -2,10 +2,10 @@ const request = require('supertest');
 const server = require('../../server');
 const db = require('../../server/connection');
 
-describe('test insert user',function(){
+describe('test insert user',()=>{
     let user;
 
-    beforeEach(function () {
+    beforeEach( ()=> {
         user = {
             userName:'zhangsan',
             name:'zhang',
@@ -16,7 +16,7 @@ describe('test insert user',function(){
             note:'happy'
         }
     });
-    afterEach(function(){
+    afterEach(()=>{
         db.query("delete from userInfo where userName = ?",user.userName)
     })
     it('should insert user is true',(done) => {
