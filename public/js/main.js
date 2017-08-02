@@ -8,6 +8,7 @@ import reducer from "./reducer/index";
 import App from './containers/app';
 import InsertUser from './containers/addUser';
 import Home from './containers/home';
+import UpdateUser from './containers/updateUser';
 import insertUserMiddleware from './middlewares/addUser';
 import getAllUsersMiddleware from './middlewares/getAllUsrs';
 import deleteUserMiddleware from './middlewares/deleteUser';
@@ -23,6 +24,7 @@ render(
             <Route path="/app" component={App}/>
             <Route path="/" component={Home}/>
             <Route path="/addUser" component={InsertUser}/>
+            <Route path="/updateUser" component={UpdateUser}/>
         </Router>
     </Provider>, document.getElementById('app')
 );
