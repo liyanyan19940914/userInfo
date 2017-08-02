@@ -1,6 +1,17 @@
 import React, {Component} from 'react';
 
 class UpdateUser extends Component{
+    componentDidMount(){
+        const user = this.props.location.query;
+        console.log(user);
+        document.getElementById('userName').value = user.UserName;
+        document.getElementById('name').value = user.name;
+        document.getElementById('sex').value = user.sex;
+        document.getElementById('age').value = user.age;
+        document.getElementById('tel').value = user.tel;
+        document.getElementById('email').value = user.email;
+        document.getElementById('note').value = user.note;
+    }
     render(){
         return <div className="col-md-6 col-md-offset-3">
             <h1 className="center">修改用户</h1>
