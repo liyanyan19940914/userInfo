@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {browserHistory} from 'react-router'
 
 class InsertUser extends Component{
     addUser(){
@@ -21,6 +22,7 @@ class InsertUser extends Component{
     componentDidUpdate(){
         if(this.props.status === true){
             alert("添加成功");
+            browserHistory.push('/');
         }else{
             alert("添加失败");
         }
