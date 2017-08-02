@@ -6,8 +6,8 @@ export default store=>next=>action=> {
         request.post('/searchUser')
             .send({userName: action.userName})
             .end((err, res) => {
-                console.log(res.body.status);
-                next({type:"SEARCHUSER",status:res.body.status});
+                console.log(res.body.user);
+                next({type:"SEARCHUSER",user:res.body.user});
             });
     } else {
         next(action)

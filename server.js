@@ -7,6 +7,7 @@ const addUser = require('./server/routers/addUser');
 const getAllUsers = require('./server/routers/getAllUsers');
 const deleteUser = require('./server/routers/deleteUser');
 const updateUser = require('./server/routers/updateUser');
+const searchUser = require('./server/routers/searchUser');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
@@ -16,6 +17,7 @@ app.use('/',addUser);
 app.use('/',getAllUsers);
 app.use('/',deleteUser);
 app.use('/',updateUser);
+app.use('/',searchUser);
 
 app.get('*', (req, res) => {
     "use strict";
