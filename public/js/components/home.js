@@ -19,6 +19,11 @@ class Home extends Component{
             user.age +"&tel=" + user.tel + "&email=" + user.email + "&note=" + user.note + "&id=" + user.id;
         browserHistory.push(path);
     }
+    searchUser(){
+        var userName = document.getElementById('userName').value;
+        console.log(userName);
+        this.props.searchUser(userName);
+    }
     componentDidUpdate(){
         console.log('delete',this.props.delStatus)
         if(this.props.delStatus === true){
@@ -33,9 +38,9 @@ class Home extends Component{
                 <form className="form-inline">
                     <div className="form-group">
                         <div className="input-group">
-                            <input type="text" className="form-control"  placeholder="请输入用户名进行查询"/>
+                            <input type="text" className="form-control"  placeholder="请输入用户名进行查询" id="userName"/>
                         </div>
-                        <button type="submit" className="btn btn-primary distance">查询</button>
+                        <button type="button" className="btn btn-primary distance" onClick={this.searchUser.bind(this)}>查询</button>
                     </div>
                     <button type="button" className="btn btn-info address" onClick={this.addUser.bind(this)}>添加用户</button>
                 </form>

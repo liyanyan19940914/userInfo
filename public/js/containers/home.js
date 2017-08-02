@@ -16,6 +16,9 @@ const mapDispatchToProps=(dispatch)=>{
         },
         deleteUser: (id)=> {
             dispatch({type: "DELETEUSER", id})
+        },
+        searchUser:(userName)=>{
+            dispatch({type:"SEARCHUSER",userName})
         }
     }
 };
