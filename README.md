@@ -8,5 +8,15 @@
 
 最后使用浏览器打开``http://localhost:3000``
 
+### 数据库表的创建
 
-
+create table userInfo(
+    id int unsigned auto_increment primary key not null,
+    userName varchar(50),
+    name varchar(50),
+    sex varchar(50),
+    age int,
+    tel varchar(50),
+    email varchar(50),
+    note varchar(50)
+    )charset=utf8;
