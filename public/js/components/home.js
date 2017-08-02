@@ -14,6 +14,11 @@ class Home extends Component{
             this.props.deleteUser(id);
         }
     }
+    updateUser(user){
+        const path = "updateUser?UserName=" + user.userName + "&name=" + user.name + "&sex=" + user.sex + "&age=" +
+            user.age +"&tel=" + user.tel + "&email=" + user.email + "&note=" + user.note + "&id=" + user.id;
+        browserHistory.push(path);
+    }
     componentDidUpdate(){
         console.log('delete',this.props.delStatus)
         if(this.props.delStatus === true){
@@ -53,7 +58,7 @@ class Home extends Component{
                                 <span className="glyphicon glyphicon-trash address" data-toggle="tooltip"
                                       data-placement="bottom" title="删除" onClick={this.deleteUser.bind(this,ele.id)}></span>
                                 <span className="glyphicon glyphicon-pencil" data-toggle="tooltip"
-                                      data-placement="bottom" title="编辑"></span>
+                                      data-placement="bottom" title="编辑" onClick={this.updateUser.bind(this,ele)}></span>
                             </td>
                         </tr>
                     })
