@@ -12,6 +12,18 @@ class UpdateUser extends Component{
         document.getElementById('email').value = user.email;
         document.getElementById('note').value = user.note;
     }
+    modifyUser(){
+        const id = parseInt(this.props.location.query.id);
+        const userName = this.refs.userName.value;
+        const name = this.refs.name.value;
+        const sex = this.refs.sex.value;
+        const age = this.refs.age.value;
+        const tel = this.refs.tel.value;
+        const email = this.refs.email.value;
+        const note = this.refs.note.value;
+        console.log(userName,name,sex,age,tel,email,note);
+        this.props.updateUser({id,userName,name,sex,age,tel,email,note})
+    }
     render(){
         return <div className="col-md-6 col-md-offset-3">
             <h1 className="center">修改用户</h1>
@@ -60,7 +72,7 @@ class UpdateUser extends Component{
                 </div>
             </form>
             <div className="center">
-                <button className="btn btn-info">提交</button>
+                <button className="btn btn-info" onClick={this.modifyUser.bind(this)}>提交</button>
             </div>
         </div>
     }
