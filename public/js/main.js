@@ -7,9 +7,10 @@ import reducer from "./reducer/index";
 
 import App from './containers/app';
 import InsertUser from './containers/addUser';
+import insertUserMiddleware from './middlewares/addUser';
 
 
-const createStoreWithMiddleware = applyMiddleware()(createStore);
+const createStoreWithMiddleware = applyMiddleware(insertUserMiddleware)(createStore);
 
 const store = createStoreWithMiddleware(reducer);
 
