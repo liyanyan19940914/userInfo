@@ -1,6 +1,14 @@
 import {connect} from 'react-redux';
 import UpdateUser from '../components/updateUser';
 
+const mapStateToProps = (state) => {
+    console.log(state,state.updateUser.status)
+    return {
+        status:state.updateUser.status
+    }
+};
+
+
 const mapDispatchToProps = (dispatch) =>{
     return {
         updateUser:(data)=>{
@@ -10,4 +18,4 @@ const mapDispatchToProps = (dispatch) =>{
     }
 }
 
-export default connect(()=>{return {}},mapDispatchToProps)(UpdateUser);
+export default connect(mapStateToProps,mapDispatchToProps)(UpdateUser);

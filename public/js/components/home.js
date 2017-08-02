@@ -29,7 +29,17 @@ class Home extends Component{
     }
     render(){
         return <div >
-            <button type="button" className="btn btn-info position" onClick={this.addUser.bind(this)}>添加用户</button>
+            <div className="position">
+                <form className="form-inline">
+                    <div className="form-group">
+                        <div className="input-group">
+                            <input type="text" className="form-control"  placeholder="请输入用户名进行查询"/>
+                        </div>
+                        <button type="submit" className="btn btn-primary distance">查询</button>
+                    </div>
+                    <button type="button" className="btn btn-info address" onClick={this.addUser.bind(this)}>添加用户</button>
+                </form>
+            </div>
             <table className="table table-bordered location table-hover">
                 <thead>
                 <tr className="font">

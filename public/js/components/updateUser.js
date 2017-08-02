@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {browserHistory} from 'react-router';
 
 class UpdateUser extends Component{
     componentDidMount(){
@@ -23,6 +24,14 @@ class UpdateUser extends Component{
         const note = this.refs.note.value;
         console.log(userName,name,sex,age,tel,email,note);
         this.props.updateUser({id,userName,name,sex,age,tel,email,note})
+    }
+    componentDidUpdate(){
+        if(this.props.status === true){
+            alert("修改成功");
+            browserHistory.push('/');
+        }else{
+            alert("修改失败");
+        }
     }
     render(){
         return <div className="col-md-6 col-md-offset-3">
