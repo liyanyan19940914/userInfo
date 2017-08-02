@@ -2,7 +2,7 @@ import {connect} from 'react-redux';
 import InsertUser from '../components/addUser';
 
 const mapStateToProps = (state) => {
-    console.log(state)
+    console.log(state,state.addUser.status)
     return {
         status:state.addUser.status
     }

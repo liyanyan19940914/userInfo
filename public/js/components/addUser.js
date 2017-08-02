@@ -17,6 +17,14 @@ class InsertUser extends Component{
             this.props.onSubmit({userName,name,sex,age,tel,email,note});
         }
     }
+
+    componentDidUpdate(){
+        if(this.props.status === true){
+            alert("添加成功");
+        }else{
+            alert("添加失败");
+        }
+    }
     render(){
         return <div className="col-md-6 col-md-offset-3">
             <h1 className="center">添加用户</h1>
