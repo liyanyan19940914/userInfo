@@ -1,6 +1,13 @@
 import {connect} from 'react-redux';
 import InsertUser from '../components/addUser';
 
+const mapStateToProps = (state) => {
+    console.log(state)
+    return {
+        status:state.addUser.status
+    }
+};
+
 const mapDispatchToProps = (dispatch) => {
     return {
         onSubmit:(data) => {
@@ -11,4 +18,4 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 
-export default connect(() => {return {}},mapDispatchToProps)(InsertUser);
+export default connect(mapStateToProps,mapDispatchToProps)(InsertUser);
