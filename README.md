@@ -27,5 +27,5 @@ create table userInfo(
     email varchar(50),
 
     note varchar(50)
-    
+
     )charset=utf8;

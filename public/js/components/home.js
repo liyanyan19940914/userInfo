@@ -24,6 +24,9 @@ class Home extends Component{
         console.log(userName);
         this.props.searchUser(userName);
     }
+    searchAllUsers(){
+        this.props.getAllUsers();
+    }
     componentDidUpdate(){
         console.log('delete',this.props.delStatus)
         if(this.props.delStatus === true){
@@ -42,7 +45,8 @@ class Home extends Component{
                         </div>
                         <button type="button" className="btn btn-primary distance" onClick={this.searchUser.bind(this)}>查询</button>
                     </div>
-                    <button type="button" className="btn btn-info address" onClick={this.addUser.bind(this)}>添加用户</button>
+                    <button type="button" className="btn btn-primary address" onClick={this.searchAllUsers.bind(this)}>查询所有</button>
+                    <button type="button" className="btn btn-primary address" onClick={this.addUser.bind(this)}>添加用户</button>
                 </form>
             </div>
             <table className="table table-bordered location table-hover">
