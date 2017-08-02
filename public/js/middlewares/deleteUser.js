@@ -6,8 +6,8 @@ export default store=>next=>action=> {
         request.post('/deleteUser')
             .send({id: action.id})
             .end((err, res) => {
-                //console.log(res.body.status.status);
-                next({type:"DELETEUSER",status:res.body.status.status});
+                console.log(res.body.status);
+                next({type:"DELETEUSER",status:res.body.status});
             });
     } else {
         next(action)
