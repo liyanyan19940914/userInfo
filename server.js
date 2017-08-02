@@ -3,9 +3,13 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const app = new express();
 
+const addUser = require('./server/routers/addUser');
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static('./public'));
+
+app.use('/',addUser);
 
 app.get('*', (req, res) => {
     "use strict";
