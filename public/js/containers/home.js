@@ -5,7 +5,7 @@ const mapStateToProps=(state)=>{
     console.log("state users",state.getAllUsers.users,state.deleteUser.delStatus);
     return {
         allUsers:state.getAllUsers.users,
-        delStatus:state.deleteUser.delStatus
+        delStatus:state.deleteUser.delStatus,
     }
 };
 

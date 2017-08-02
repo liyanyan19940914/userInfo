@@ -1,8 +1,7 @@
 module.exports = (state = {users:[]},action) =>{
     switch(action.type){
-        case 'GETALLUSERS':{
+        case 'USER':{
             console.log('reduce',action.users);
-
             return {users:action.users};
         }
 

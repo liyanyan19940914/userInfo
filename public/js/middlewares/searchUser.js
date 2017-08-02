@@ -7,7 +7,7 @@ export default store=>next=>action=> {
             .send({userName: action.userName})
             .end((err, res) => {
                 console.log(res.body.user);
-                next({type:"SEARCHUSER",user:res.body.user});
+                next({type:"USER",users:res.body.user});
             });
     } else {
         next(action)
