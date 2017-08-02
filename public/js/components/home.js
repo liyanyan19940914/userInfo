@@ -8,6 +8,12 @@ class Home extends Component{
     addUser(){
         browserHistory.push('/addUser');
     }
+    deleteUser(id){
+        var isDelete = confirm('是否要删除此用户');
+        if(isDelete){
+            this.props.deleteUser(id);
+        }
+    }
     render(){
         return <div >
             <button type="button" className="btn btn-info position" onClick={this.addUser.bind(this)}>添加用户</button>
@@ -37,7 +43,7 @@ class Home extends Component{
                             <td>{ele.note}</td>
                             <td>
                                 <span className="glyphicon glyphicon-trash address" data-toggle="tooltip"
-                                      data-placement="bottom" title="删除" ></span>
+                                      data-placement="bottom" title="删除" onClick={this.deleteUser.bind(this,ele.id)}></span>
                                 <span className="glyphicon glyphicon-pencil" data-toggle="tooltip"
                                       data-placement="bottom" title="编辑"></span>
                             </td>
