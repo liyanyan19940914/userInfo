@@ -1,23 +1,27 @@
 import React,{Component} from 'react';
+import {browserHistory} from 'react-router'
 
 class Home extends Component{
     componentWillMount(){
         this.props.getAllUsers();
     }
-
+    addUser(){
+        browserHistory.push('/addUser');
+    }
     render(){
         return <div >
-            <table className="table table-bordered location">
+            <button type="button" className="btn btn-info position" onClick={this.addUser.bind(this)}>添加用户</button>
+            <table className="table table-bordered location table-hover">
                 <thead>
-                <tr>
-                    <th className="col-md-1">用户名</th>
-                    <th className="col-md-1">姓名</th>
-                    <th className="col-md-1">性别</th>
-                    <th className="col-md-1">年龄</th>
-                    <th className="col-md-1">电话</th>
-                    <th className="col-md-1">邮箱</th>
-                    <th className="col-md-1">其他</th>
-                    <th className="col-md-1">操作</th>
+                <tr className="font">
+                    <td className="col-md-1">用户名</td>
+                    <td className="col-md-1">姓名</td>
+                    <td className="col-md-1">性别</td>
+                    <td className="col-md-1">年龄</td>
+                    <td className="col-md-1">电话</td>
+                    <td className="col-md-1">邮箱</td>
+                    <td className="col-md-1">其他</td>
+                    <td className="col-md-1">操作</td>
                 </tr>
                 </thead>
                 <tbody>

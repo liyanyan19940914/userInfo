@@ -1,8 +1,21 @@
 .location{
-    margin-top: 100px;
+    margin-top: 50px;
     text-align: center;
 }
 
 .address{
     margin-right: 20px;
+}
+
+.font{
+    font-weight: 800;
+    font-size: 16px;
+}
+
+.position{
+    display: table;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
 }
