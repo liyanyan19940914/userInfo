@@ -1,6 +1,22 @@
 import React, {Component} from 'react';
 
 class InsertUser extends Component{
+    addUser(){
+        const userName = this.refs.userName.value;
+        const name = this.refs.name.value;
+        const sex = this.refs.sex.value;
+        const age = this.refs.age.value;
+        const tel = this.refs.tel.value;
+        const email = this.refs.email.value;
+        const note = this.refs.note.value;
+        console.log(userName,name,sex,age,tel,email,note);
+        if(userName === '' || name === '' || sex === '' || age === '' || tel === '' || email === '' || note === ''){
+            alert('请补全信息')
+        }
+        else{
+            this.props.onSubmit({userName,name,sex,age,tel,email,note});
+        }
+    }
     render(){
         return <div className="col-md-6 col-md-offset-3">
             <h1 className="center">添加用户</h1>
@@ -49,7 +65,7 @@ class InsertUser extends Component{
                 </div>
             </form>
             <div className="center">
-                <button className="btn btn-info">提交</button>
+                <button className="btn btn-info" onClick={this.addUser.bind(this)}>提交</button>
             </div>
         </div>
     }
