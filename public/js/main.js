@@ -12,9 +12,10 @@ import UpdateUser from './containers/updateUser';
 import insertUserMiddleware from './middlewares/addUser';
 import getAllUsersMiddleware from './middlewares/getAllUsrs';
 import deleteUserMiddleware from './middlewares/deleteUser';
+import updateUserMiddleware from './middlewares/updateUser';
 
 
-const createStoreWithMiddleware = applyMiddleware(insertUserMiddleware,getAllUsersMiddleware,deleteUserMiddleware)(createStore);
+const createStoreWithMiddleware = applyMiddleware(insertUserMiddleware,getAllUsersMiddleware,deleteUserMiddleware,updateUserMiddleware)(createStore);
 
 const store = createStoreWithMiddleware(reducer);
 

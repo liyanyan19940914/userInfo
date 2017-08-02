@@ -6,6 +6,7 @@ const app = new express();
 const addUser = require('./server/routers/addUser');
 const getAllUsers = require('./server/routers/getAllUsers');
 const deleteUser = require('./server/routers/deleteUser');
+const updateUser = require('./server/routers/updateUser');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
@@ -14,6 +15,7 @@ app.use(express.static('./public'));
 app.use('/',addUser);
 app.use('/',getAllUsers);
 app.use('/',deleteUser);
+app.use('/',updateUser);
 
 app.get('*', (req, res) => {
     "use strict";
