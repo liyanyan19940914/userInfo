@@ -21,7 +21,12 @@ class Home extends Component{
     }
     searchUser(){
         var userName = document.getElementById('userName').value;
-        this.props.searchUser(userName);
+        if(userName){
+            this.props.searchUser(userName);
+        }
+        else{
+            this.props.getAllUsers();
+        }
     }
     searchAllUsers(){
         this.props.getAllUsers();
