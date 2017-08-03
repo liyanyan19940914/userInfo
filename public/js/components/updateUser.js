@@ -66,7 +66,7 @@ class UpdateUser extends Component{
                     </div>
                 </div>
                 <div className="form-group">
-                    <label className="col-md-2 control-label">其他</label>
+                    <label className="col-md-2 control-label">备注</label>
                     <div className="col-md-10">
                         <input type="text" className="form-control" id="note" ref="note"/>
                     </div>
