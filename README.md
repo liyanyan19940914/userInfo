@@ -8,6 +8,8 @@
 
 最后使用浏览器打开``http://localhost:3000``
 
+使用``npm test``运行测试
+
 ### 数据库表的创建
 
 create table userInfo(
