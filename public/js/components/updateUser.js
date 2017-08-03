@@ -4,7 +4,6 @@ import {browserHistory} from 'react-router';
 class UpdateUser extends Component{
     componentDidMount(){
         const user = this.props.location.query;
-        console.log(user);
         document.getElementById('userName').value = user.UserName;
         document.getElementById('name').value = user.name;
         document.getElementById('sex').value = user.sex;
@@ -22,7 +21,6 @@ class UpdateUser extends Component{
         const tel = this.refs.tel.value;
         const email = this.refs.email.value;
         const note = this.refs.note.value;
-        console.log(userName,name,sex,age,tel,email,note);
         this.props.updateUser({id,userName,name,sex,age,tel,email,note})
     }
     componentDidUpdate(){

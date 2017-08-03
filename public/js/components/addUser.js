@@ -10,7 +10,6 @@ class InsertUser extends Component{
         const tel = this.refs.tel.value;
         const email = this.refs.email.value;
         const note = this.refs.note.value;
-        console.log(userName,name,sex,age,tel,email,note);
         if(userName === '' || name === '' || sex === '' || age === '' || tel === '' || email === '' || note === ''){
             alert('请补全信息')
         }

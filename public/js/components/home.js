@@ -21,14 +21,12 @@ class Home extends Component{
     }
     searchUser(){
         var userName = document.getElementById('userName').value;
-        console.log(userName);
         this.props.searchUser(userName);
     }
     searchAllUsers(){
         this.props.getAllUsers();
     }
     componentDidUpdate(){
-        console.log('delete',this.props.delStatus)
         if(this.props.delStatus === true){
             this.props.getAllUsers();
         }else if(this.props.delStatus === false){
