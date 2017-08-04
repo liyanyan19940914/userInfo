@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/liyanyan19940914/userInfo.svg?branch=master)](https://travis-ci.org/liyanyan19940914/userInfo.svg?branch=master)
+
 ### userInfo
 
 使用``npm install``安装依赖
