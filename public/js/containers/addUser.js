@@ -10,8 +10,10 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         onSubmit:(data) => {
-            console.log(data);
             dispatch({type:'ADDUSER',data})
+        },
+        reset:(status)=>{
+            dispatch({type:'RESET',status})
         }
     }
 };

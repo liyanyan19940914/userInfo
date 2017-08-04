@@ -15,7 +15,16 @@ class InsertUser extends Component{
         }
         else{
             this.props.onSubmit({userName,name,sex,age,tel,email,note});
+        }
+    }
+
+    componentDidUpdate(){
+        if(this.props.status === true){
+            alert('添加成功！');
             browserHistory.push('/');
+            this.props.reset({status:false})
+        }else{
+            alert('添加失败！');
         }
     }
 
