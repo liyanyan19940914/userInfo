@@ -12,8 +12,10 @@ const mapDispatchToProps = (dispatch) =>{
     return {
         updateUser:(data)=>{
             dispatch({type:'UPDATEUSER',data})
+        },
+        reset:(status)=>{
+            dispatch({type:'RESET',status})
         }
-
     }
 }
 

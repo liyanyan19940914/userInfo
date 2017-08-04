@@ -22,7 +22,16 @@ class UpdateUser extends Component{
         const email = this.refs.email.value;
         const note = this.refs.note.value;
         this.props.updateUser({id,userName,name,sex,age,tel,email,note})
-        browserHistory.push('/');
+    }
+
+    componentDidUpdate(){
+        if(this.props.status === true){
+            alert('修改成功！');
+            browserHistory.push('/');
+            this.props.reset({status:false})
+        }else{
+            alert('修改失败！');
+        }
     }
 
     render(){
